@@ -1,0 +1,1138 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage{amsmath}
+\usepackage[latin,danish,english]{babel}
+\usepackage{amssymb}
+\usepackage{stmaryrd}
+\usepackage{amsfonts}
+\usepackage{fancyhdr}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{geometry}
+\usepackage{lastpage}
+\usepackage{amsthm}
+\usepackage{lipsum}
+\usepackage{framed}
+\pagestyle{fancy}
+\fancyhead[r]{Kage er vigtigt!}
+\fancyhead[l]{}
+\fancyfoot[c]{Side \thepage  \ af \pageref{LastPage}}
+\theoremstyle{definition}
+\newtheorem{Prob}{Spørgsmål}
+
+
+\begin{document}
+
+\section{KomAn 2016/2017 - Definitioner}
+\begin{framed}
+\textbf{Differentiabel} \\
+Hvis $f$ er differentiabel betyder det, at $\frac{f(z_0+h)-f(z_0)}{h}$ har en grænse for $h \rightarrow 0$.
+\end{framed}
+
+\begin{framed}
+\textbf{Holomorf} \\
+Hvis $f$ er holomorf i G (altså at $f\in \mathcal{H}(G)$), betyder det, at $f$ er differentiabel i alle punkter af $z_0 \in G$.
+\end{framed}
+
+\begin{framed}
+\textbf{Område} \\
+$G \in \mathbb{C}$ er åben. $G$ er et område $\Leftrightarrow$ punkterne $P, Q \in G$ kan forbindes af en trappelinje inden i $G$. \\
+$G$ er konveks $\Leftrightarrow$ man kan tegne en ret linje mellem to vilkårlige punkter i $G$. \\
+$G$ er et stjerneformet område $\Leftrightarrow$ $\exists a \in G$, så man kan tegne et ret linje fra alle punkter i $G$ til $a$. \\
+$G$ er enkeltsammenhængende $\Leftrightarrow$ for to kurver mellem $P, Q \in G$ kan deformeres kontinuert over i hinanden.
+\end{framed}
+
+\begin{framed}
+\textbf{Kurveintegral} \\
+$$\int_\gamma = \int_\gamma f(z)dz = \int_a^b f(\gamma(t))\gamma'(t)dt$$
+\end{framed}
+
+\begin{framed}
+\textbf{Kurvesammenhængende} \\
+En delmængde $A \subseteq \mathbb{C}$ kaldes kurvesammenhængende, hvis to tilfældige punkter i $A$ kan forbindes af en kontinuert kurve indeholdt i $A$.
+\end{framed}
+
+\begin{framed}
+\textbf{arg$z$} \\
+arg$z = \{\theta \in \mathbb{R} | z = |z|e^{i\theta}\}$ \\
+arg$z = $Arg$z + 2 \pi \mathbb{Z}$ \\
+arg$z \in (-\pi, \pi]$ så Arg$z \in$  arg$z \cap (-\pi, \pi]$.
+\end{framed}
+
+\begin{framed}
+\textbf{Hel funktion } \\
+En holomorf funktion $f: \mathbb{C} \rightarrow \mathbb{C}$ kaldes en hel funktion. Især gælder det om hele funktioner, at de er lig deres Taylorudvikling, især omkring $0$.
+\end{framed}
+
+\newpage
+\begin{framed}
+\textbf{Lokal uniform konvergens} \\
+Lad $G \subseteq \mathbb{C}$ være åben. En følge af funktioner $f_n : G \rightarrow \mathbb{C}$ konvergerer lokalt uniformt til $f: G \rightarrow \mathbb{C}$, hvis $\forall a \in G \ \exists r>0$ sådan, at $\overline{K(a,r)} \subseteq G$ og $f_n(z) Z\rightarrow f(z)$ uniformt for $z \in \overline{K(a,r)}$.
+\end{framed}
+
+\begin{framed}
+\textbf{Fortætningspunkt} \\
+$a \in \mathbb{C}$ er fortætningspunkt i $A \subseteq \mathbb{C}$, hvis  $\forall r >0 : K'(a,r) \cap A \neq \emptyset$
+\end{framed}
+
+\begin{framed}
+\textbf{Diskret mængde} \\
+$G \subseteq \mathbb{C}$ er åben, så er $A \in G$ diskret, hvis A ikke har nogen fortætningspunkter.
+\end{framed}
+
+\begin{framed}
+\textbf{Singulariteter} \\
+$G \subseteq \mathbb{C}$ er åben, $a \in G$, hvis $f \in \mathcal{H}(G \setminus \{a\}$, så kaldes $a$ en isoleret singularitet. \\
+Hvis $f$ kan gives en kompleks værdi i $a$, så $f$ bliver differentiabel i $a$, så kaldes singulariteten hævelig. \\
+En isoleret singularitet $a$ kaldes en pol af orden $m \in \mathbb{N}$ af $f$, hvis
+$$\lim_{z \rightarrow a}(z-a)^m f(z) \neq 0$$
+En pol af orden $1$ kaldes en simpel pol. \\
+En isoleret singularitet, som hverken er hævelig eller en pol, kaldes essentiel.
+\end{framed}
+
+\begin{framed}
+\textbf{Meromorf} \\
+En meromorf funktion i et område $G \subseteq \mathbb{C}$ afbilder $h : G \rightarrow \mathbb{C} \cup \{\infty\}$ har egenskaberne: \\
+(i) \ $P = \{z \in G | h(z) = \infty\}$ er diskret i $G$. \\
+(ii)\ Begrænsningen $f = h|G \setminus P$ er holomorf i den åbne mængde $G \setminus P$. \\
+(iii) Ethvert punkt $a \in P$ er en pol i $f$.
+\end{framed}
+
+\newpage
+\begin{framed}
+\textbf{Faktum 1.} \ $\vartriangle \supseteq \vartriangle_1 \supseteq \vartriangle_2 \supseteq ...,$ så er $\cap{n=1}^\infty \vartriangle_n = \{z_0\},$ altså netop ét punkt. (Bolzano-Weierstass' sætning) \\
+
+\textbf{Faktum 2.} \ $L(\partial \vartriangle_n) = 2^{-n} L (\partial \vartriangle)$ \\
+
+\textbf{Faktum 3.} \ $a,b \in \vartriangle_n \ \Rightarrow \ \left| a-b \right| \leq \frac{1}{2} L (\partial \vartriangle_n)$
+\begin{align*}
+\left| a-b \right| &\leq \left| a' - b' \right| \\
+\left| a' - b' \right| &\leq \left| a'-c \right| + \left| c - b' \right| \\
+&\leq \left| a' - e \right| + \left| e-d \right| + \left| d-b' \right|
+\end{align*}
+\includegraphics[scale=1]{Factum}
+\end{framed}
+
+
+
+
+
+\newpage
+\section{Hjælpesætninger}
+\begin{framed}
+\textbf{Definition fra Analyse 0} \\
+En funktion $u : G \rightarrow \mathbb{R}$ er differntiabel i $\textbf{a}$, hvis der findes $\textbf{c} \in \mathbb{R}^2$, så 
+$$\vartriangle u = u ( \textbf{a} + \textbf{h}) - u (\textbf{a}) = \textbf{c} \textbf{h} + \epsilon (\textbf{h}) \parallel \textbf{h} \parallel$$
+hvor $\epsilon$ er en epsilonfunktion.
+\end{framed}
+
+\begin{framed}
+\textbf{Teknisk:} \\
+\begin{align*}
+\frac{x^n - y^n}{x-y} &= \frac{x^n(1 - (\frac{y}{x})^n)}{x - \frac{y}{x}} \\
+&= n^{n-1} \sum\limits_{k=0}^{n-1} (\frac{y}{x})^k \\
+&= n^{n-1} \sum\limits_{k=1}^n (\frac{y}{x})^{k-1} \\
+&= \sum\limits_{k=1}^n y^{k-1} x^{n-1 - (k-1)} \\
+&= \sum\limits_{k=1}^n x^{n-k} y^{k-1}
+\end{align*}
+\end{framed}
+
+\begin{framed}
+\textbf{Lemma 1.11} \\
+En potensrække og dens led-vist afledte potensrække har samme konvergensradius.
+\end{framed}
+
+\begin{framed}
+\textbf{Korollar 1.13} \\
+Sumfunktionen $f$ af en potensrække $\sum_0^\infty a_n z^n$ er differentiabel uendeligt ofte i $K(0,\rho)$ og den følgende formel gælder
+$$ a_k = \frac{f^{(k)}(0)}{k!}, \ \ k= 0,1,2,...$$
+Potensrækken er dens egen Taylorrække i 0, så
+$$ f(z) = \sum_{n=0}^\infty \frac{f^{(n)} (0)}{n!} z^n, \ \ |z| < \rho.$$
+\end{framed}
+
+\begin{framed}
+\textbf{Theorem 2.11} \\
+Antag at den kontinuerte funktion $f : G \rightarrow \mathbb{C}$ i området $G \subseteq \mathbb{C}$ har en stamfunktion $F : G \rightarrow \mathbb{C}$. Så
+$$ \int_\gamma f(z) dz = F(z_2) - F(z_1) $$
+for enhver kurve $\gamma \in G$ fra $z_1$ til $z_2$. \\ 
+I særdeleshed, så er $\int_\gamma f = 0$ for enhver lukket kurve $\gamma$.
+\end{framed}
+
+\begin{framed}
+\textbf{Estimationslemmaet (Lemma 2.8)} \\
+Lad $\gamma : [a,b] \rightarrow \mathbb{C}$, $\gamma(t) = x(t) + i y(t)$. For en kontinuert funktion $f : \gamma^* \rightarrow \mathbb{C}$ gælder, at
+$$ \left| \int_\gamma f \right| \leq max_{z \in \gamma^*} \left| f(z) \right| L(\gamma)$$
+hvor $L(\gamma)$ er længden af kurven;
+$$ L(\gamma) := \int_a^b \left| \gamma'(t) \right| dt = \int_a^b \sqrt{x'(t)^2 + y'(t)^2}dt$$.
+\textbf{Bemærkning 2.9} siger, at i praksis er det ofte ikke nødvendigt at bestemme
+$$max_{z \in \gamma^*} \left| f(z) \right| = max_{t \in [a,b]} \left| f(\gamma(t))\right|,$$
+fordi det ofte er nemt at estimere $\vert f(z) \vert \leq K, \ \forall z \in \gamma^*$ og så giver estimationslemmaet, at
+$$\left| \int_\gamma f \right| \leq K \cdot L(\gamma)$$
+\end{framed}
+
+\begin{framed}
+\textbf{Theorem 3.3 (Cauchys Integral Sætning for stjerneformede områder)} \\
+Lad $G$ være et stjerneformet område og antag af $f \in \mathcal{H}(G)$. Så er 
+$$ \int_\gamma f(z)dz = 0$$
+for enhver lukket sti $\gamma$ i $G$.
+\end{framed}
+
+\begin{framed}
+\textbf{Eksempel 3.7} \\
+Antag at $f \in \mathcal{H}((G \setminus \{z_0\})$ og at stierne $C$ og $K$ er de afsluttede cirkler af de to cirkelskiver $K(a,r)$ og $K(z_0,s)$, som opfylder $$\bar{K(z_0,s)} \subseteq K(a,r), \ \ \bar{K(a,r)} \subseteq K(a,R) \subseteq G,$$
+Så har vi
+$ \int_{\partial K(a,r)} f = \int_{\partial K(z_0,s)} f$
+\end{framed}
+
+\begin{framed}
+\textbf{Theorem 3.8 (Cauchys Integral Formel)} \\
+Lad $f: G \rightarrow \mathbb{C}$ være holomorf i en åben mængde $G$ og antag at $K(a,r) \subseteq G$. For alle $z_0 \in K(a,r)$ gælder så, at
+$$ f(z_0) = \frac{1}{2 \pi i} \int_{\partial K(a,r)} \frac{f(z)}{z-z_0}dz$$
+hvor $\partial K(a,r)$ gennemløbes én gang i positiv omløbsretning.
+\end{framed}
+
+\begin{framed}
+\textbf{Theorem 4.2} \\
+Lad $M \subseteq \mathbb{C}$ og lad $f_n : M \rightarrow \mathbb{C}$ være uniformt konvergent til funktionen $f : M \rightarrow \mathbb{C}$. \\
+Hvis alle funktionerne $f_n$ er kontinuerte i $z_0 \in M$, så er $f$ det også.
+\end{framed}
+
+\begin{framed}
+\textbf{Theorem 4.4 (Weierstrass' M-test)} \\
+Lad $\sum_0^\infty f_n(x)$ være en uendelig række af funktioner $f_n : M \rightarrow \mathbb{C}$ og antag at der existerer en konvergent følge $\sum_0^\infty a_n$, som har positive $a_n$'er, sådan at
+$$ \forall n \in \mathbb{N}_0 \ \forall x \in M : \left| f_n(x) \right| \leq a_n $$
+Altså er $a_n$ en majorant for $f_0$ på $M$ for ethvert $n$. Så er følgen $\sum_0^\infty f_n (x)$ konvergerer uniformt på $M$.
+\end{framed}
+
+\begin{framed}
+\textbf{Theorem 4.6} \\
+Lad $\gamma : [a,b] \rightarrow \mathbb{C}$ være en sti i $\mathbb{C}$ og lad $f_n : \gamma^* \rightarrow \mathbb{C}$ være en følge af kontinuerte funktioner \\
+\textbf{(i)} Hvis $f_n \rightarrow f$ uniformt på $\gamma^*$, så
+$$ \lim_{n \rightarrow \infty} \int_\gamma f_n = \int_\gamma f \left(= \int_\gamma \lim_{n \rightarrow \infty} f_n \right) $$
+\textbf{(ii)} Hvis $\sum_{n=0}^\infty f_n$ konvergerer uniformt på $\gamma^*$ til sumfunktionenen $s : \gamma^* \rightarrow \mathbb{C}$, så er
+$$ \sum_{n=0}^\infty \int_\gamma f_n = \int_\gamma s \left( = \int_\gamma \sum_{n=0}^\infty f_n \right)$$
+\end{framed}
+
+\newpage
+\begin{framed}
+\textbf{Theorem 4.8, Cauchy's Integral Formel for den n'te afledte} \\
+Lad $f \in \mathcal{H}(G)$. Så er $f$ uendeligt ofte differentiabel og Taylorrækken om $a \in G$ er konvergent med sumfunktionen $f$ i den største åbne cirkelskive $K(a, \rho) \subseteq G$, som er givet ved
+$$f(z)= \sum\limits_{n=0}^\infty \frac{f^{(n)}(a)}{n!} (z-a)^n \ \text{ for } z \in K(a,\rho)$$
+Antag, at $\overline{K(a,r)} \subseteq G$. For tilfældig $z_0 \in K(a,r)$ har vi nu, at
+$$f^{(n)}(z_0) = \frac{n!}{2 \pi i} \int_{\partial K(a,r)} \frac{f(a)}{(z-z_0)^{n+1}} dz, \ \ n = 0, 1, ...,$$
+\end{framed}
+
+\begin{framed}
+\textbf{Theorem 4.12 (Moreras Sætning)} \\
+Lad $f : G \rightarrow \mathbb{C}$ være kontinuert i en åben mængde $G \subseteq \mathbb{C}$. Hvis $\int_\gamma f = 0$ for enhver lukket sti $\gamma \in G$, eller hvis blot $\int_{\partial \vartriangle} f = 0$ for enhver solid trekant $\vartriangle \in G$, så er $f \in \mathcal{H}(G)$.
+\end{framed}
+
+\begin{framed}
+\textbf{Lemma 5.2 (Flise-lemmaet)} \\
+Lad $G$ være en åben delmængde af $\mathbb{C}$ og lad $\gamma : [a,d] \rightarrow G$ være en kontinuert kurve i $G$. \\
+Der findes uendeligt mange punkter $a=t_0 < t_1 < ... < t_n=b$ i intervallet $[a,b]$ og en radius $r>0$ sådan, at
+$$\bigcup_{i=0}^n K(\gamma(t_i),r) \subseteq G$$
+og
+$$\gamma([t_i,t_{i+1}]) \subseteq K(\gamma(t_i),r), \ \ i = 0,1,...,n-1.$$
+\end{framed}
+
+\begin{framed}
+\textbf{Theorem 5.14} \\
+Hovedlogaritmen
+$$\text{Log } z = \ln |z| + i \ \text{Arg }z$$
+er holomorf i det opskårne plan $\mathbb{C}_\pi$, jf. afsnittet om Argumentfunktionener og omdrejningstal (5.2), og afbilleder den bijektivt på striben $\{w \in \mathbb{C} | -\pi < \Im w < \pi\}$. Dens afledte er givet ved
+$$\text{Log}'(z) = \frac{1}{z}, \ \ z \in \mathbb{C}_\pi$$
+\end{framed}
+
+\newpage
+\begin{framed}
+\textbf{Theorem 6.1} \\
+Lad $f$ være holomorf i et område $G$ og antag at $f \not\equiv 0$. \\
+Hvis $f(a)=0$, så findes der et entydigt bestemt $n \in \mathbb{N}$ og en entydigt bestemte funktion $g \in \mathcal{H}(G)$ med $g(a) \neq 0$ sådan, at
+$$f(z) = (z-a)^n g(z), \ \ z \in G$$
+(Tallet kaldes multipliciteten eller ordenen af nulpunktet $a$ for $f$ og betegnes $\text{ord}(f,a)$.)
+\end{framed}
+
+\begin{framed}
+\textbf{Theorem 6.9 (Riemann)} \\
+Antag, at $f \in \mathcal{H}(G \setminus \{a\})$ er begrænset i $K'(a,r)$ for et tal $r>0$.  \\
+Så har $f$ en hævelig singularitet i $a$.
+\end{framed}
+
+\begin{framed}
+\textbf{Bemærkning 6.18} \\
+Til en holomorf funktion $f$ i annulus'en $A(a; R_1, R_2)$ er der en tilhørende en holomorf funktion $f_i$ i $K(a,R_2)$ med potensrækken
+$$f_i (z) = \sum\limits_{n=0}^\infty c_n (z-a)^n$$
+og en holomorf funktion $f_e$ i $\{z \in \mathbb{C} \ | \ |z-a| > R_1\}$ med rækkeudviddelsen
+$$f_e(z) = \sum\limits_{n=1}^\infty \frac{c_{-n}}{(z-a)^n}$$
+For $z \in A(a;R_1,R_2)$ har vi
+$$f(z) = f_i(z) + f_e(z)$$
+\end{framed}
+
+\begin{framed}
+\textbf{Theorem 7.1 (Cauchys Residue Sætning)} \\
+Lad $G$ være et enkeltsammenhængende område og lad $P=\{a_1,...,a_n\} \subseteq G$. Lad $\gamma$ være en simpel lukket sti i $G$, som omkranser $a_1,...,a_n$ i positiv omløbsretning. \\
+For $f  \in \mathcal{H}(G \setminus P)$ har vi, at
+$$\int_\gamma f(z)dz = 2 \pi i \sum\limits_{j=1}^n \text{Res}(f,a_j).$$
+\end{framed}
+
+\newpage
+\begin{framed}
+\textbf{Theorem 8.2 (Maximum modulus princippet - Global version)} \\
+Lad $G$ være et begrænset område i $\mathbb{C}$ og antag, at $f: \overline{G} \rightarrow \mathbb{C}$ er kontinuert og, at $f$ er holomorf i $G$. \\ 
+Supremummet
+$$M= \sup\{|f(z)| \ | \ z\in \overline{G}$$
+opnås på et punkt på grænsen af $G$, men ikke i et punkt inden i $G$, medmindre $f$ er konstant i $G$.
+\end{framed}
+
+
+
+
+
+
+
+
+
+\newpage
+\section{Eksamenssætninger}
+
+\begin{Prob}{\textbf{Theorem 1.6 (Cauchy-Riemann's differentialligninger)}}
+
+\begin{align*}
+f(z) = f(x+iy) &= \Re(f(x+iy)) + i \Im(f(x+iy))  \\
+&= u(x,y) + i v(x,y)
+\end{align*}
+Funktionen $f: G \rightarrow \mathbb{C}$, hvor $G \subseteq \mathbb{C}$ er åben, er kompleks differentiabel i $z_0 = x_0 +i y_0$ \\
+\textcolor{red}{$\Updownarrow$}
+\item[1)] $u$ og $v$ er differentiable i $(x_0,y_0)$
+\item[2)] De partielt afledte opfylder, at
+$$ \frac{\partial u}{\partial x} = \frac{\partial v}{\partial y}  \ \ \text{og} \ \ \frac{\partial u}{\partial y} = - \frac{\partial v}{\partial x} $$ 
+For et differentiabelt $f$ har vi, at
+$$ f' (z_0) = \frac{\partial f}{\partial x} (z_0) = \frac{1}{i} \frac{\partial f}{\partial y} (z_0)$$
+\end{Prob}
+
+\begin{framed}
+\textbf{Bevisfremgang} \\
+\textbf{1.} \ Antag at $f$ er komplekst differentiabel og brug at 
+$$ f (z_0 + t) = f(z_0) + tc + t \epsilon (t)$$
+for $t=h+ik$ og $f'(z_0)=c=a+ib$ da $f$ er komplekst differentiabel. \\
+\textbf{2.} \ Udregn $ t \cdot c$ og split i $\Re$ og $\Im$. \\
+\textbf{3.} \ Skriv $t\epsilon(t)$ om til $|t|\frac{t}{|t|}\epsilon(t)$ og split $f(z_0 + t)$ op i $\Re$ og $\Im$. \\
+\textbf{4.} \ Husk at for $|z| = \sqrt{x^2+y^2}$ hvis og kun hvis $x$ og $y$ også mod $0$. \\
+\textbf{5.} \  Lav nu partiel differentiering af $u$ og $v$ i $(x_0,y_0)$. \\
+\textbf{6.} \ Sæt $t\cdot c$ in i $f(z_0 + t)$ og lav partiel differentiation.
+\end{framed}
+
+\newpage
+\begin{proof}[\textbf{Bevis}]
+Bestemmer $r > 0$, så $K(z_0,r) \subseteq G$. (Kan vi altid da $G$ er åben) \\
+For $ t = h + ik \in K'(0,r)$ og $c = a + ib$, findes $\epsilon : K'(0,r) \rightarrow \mathbb{C}$, så
+\begin{equation} \label{eq}
+ f (z_0 + t) = f(z_0) + tc + t \epsilon (t)
+\end{equation}
+for $t \in K'(0,r)$, jf. definition fra Analyse 0. \\
+Vi ved, at $f$ er differentiabel i $z_0$ med $f'(z_0) = c$, hvis og kun hvis $\epsilon (t) \rightarrow 0$ for $t \rightarrow 0$. \\
+Ser på
+\begin{align*}
+t \cdot c &= (h + ik)(a + ib) \\
+&= ha + ihb + ika - kb \\
+&= ha - kb + i (hb +ka) 
+\end{align*}
+
+Skriver nu om, så $t \epsilon (t) = \vert t \vert \frac{t}{\mid t \mid} \epsilon (t) $ og deler (1) ind i reel- og imaginærdel:
+\begin{equation}
+u((x_0,y_0) + (h,k)) = u(x_0,y_0) + ha - kb + \vert t \vert \sigma (h,k)
+\end{equation}
+\begin{equation}
+v((x_0,y_0) + (h,k)) = v(x_0,y_0) + hb+ ka + \vert t \vert \tau (h,k)
+\end{equation}
+hvor $\sigma (h,k) = \Re(\frac{t}{\vert t \vert} \epsilon (t))$ og $\tau (h,k) = \Im(\frac{t}{\vert t \vert} \epsilon (t))$. \\
+Bemærk nu, at 
+$$ \vert \epsilon (t) \vert = \sqrt{\sigma (h,k)^2 + \tau (h,k)^2}$$
+da $ \vert z \vert = \sqrt{x^2 + y^2}$. \\
+Vi ser nu, at for $t \rightarrow 0$ vil $\epsilon \rightarrow 0$, så for $(h,k) \rightarrow 0$ vil $\sigma (h,k), \ \tau (h,k) \rightarrow 0$. \\ \\
+Dermed får vi, jf. Definition fra Analyse 0, at $u$ og $v$ er differentiable i $(x_0,y_0)$, netop hvis $\sigma (h,k), \tau (h,k) \rightarrow 0$ og, at 
+$$ \frac{\partial u}{\partial x} = a \ \ \text{og} \ \  \frac{\partial u}{\partial y} = -b$$
+og, at
+$$ \frac{\partial v}{\partial x} = b \ \ \text{og} \ \  \frac{\partial v}{\partial y} = a$$
+Så
+$$ \frac{\partial u}{\partial x} = \frac{\partial v}{\partial y}  \ \ \text{og} \ \ \frac{\partial u}{\partial y} = - \frac{\partial v}{\partial x} $$ 
+Vi ser nu på (1) og indsætter at $t \cdot c = ha - kb + i(hb + ka)$:
+$$f (z_0 + t) = f(z_0) + ha - kb + i(hb + ka) + t \epsilon (t)$$
+$f$ er kompleks differentiabel i $z_0$, netop hvis $\epsilon(t) \rightarrow 0$ for $t \rightarrow 0$, og så gælder det, at 
+$$ f'(z_0) = c = a + ib = \frac{\partial f}{\partial x} (z_0) = \frac{1}{i} \frac{\partial f}{\partial y} (z_0)$$
+\end{proof}
+
+
+
+
+
+
+
+
+\newpage
+\begin{Prob}{\textbf{Theorem 1.12 (Hovedsætning om potensrækker)}} \\
+
+Sumfunktionen $f$ for potensrækken $\sum\limits_{n=0}^\infty a_n z^n$ med konvergensradius $\rho > 0$ er holomorf i konvergenscirklen $K(0,\rho)$ og
+\begin{align*}
+f'(z) = \sum\limits_{n=1}^\infty n a_n z^{n-1}, \ \  \text{for} \ \left| z \right| < \rho
+\end{align*}
+\end{Prob}
+
+\begin{framed}
+\textbf{Bevisfremgang} \\
+\textbf{1.} \ Se først at rækken $\sum\limits_{n=1}^\infty n a_n z^{n-1}$ konvergerer for $\left| z \right| < \rho$  (Lemma 1.11: En potensrække og dens ledvist afledte har samme konvergensradius. \\
+\textbf{2.} \ Definer $\epsilon(h)$:
+$$\epsilon(h):= \frac{f(z_0 + h) - f(z_0)}{h} - \sum\limits_{n=1}^\infty n a_n z_0^{n-1}$$
+Smart valg af $h$ er $0 < |h| < r - |z_0|$. Hvis $f$ er differentiabel i $z_0$, gælder det, at $\epsilon (h) \rightarrow 0$ for $h \rightarrow 0$.\\
+\textbf{3.} \ $\epsilon,\delta$-Bevis: Lad $\epsilon > 0$ og find $\delta > 0$ så $\left| \epsilon (h) \right| < \epsilon$, for  $\left|  h \right| < \delta$, og brug at rækken konvergerer, så vi kan vælge $N$, som opfylder
+$$\sum\limits_{N + 1}^\infty n \left| a_n \right| r^{n-1} < \frac{\epsilon}{4}.$$\\
+\textbf{4.} \ Del $\epsilon(h)$:
+$$\epsilon(h) = A(h) = \sum\limits_{n=1}^N + B(h) = \sum\limits_{n=N+1}^\infty $$ \\
+\textbf{5.} \  Husk
+$$ \frac{x^n - y^n}{x-y} = \sum\limits_{n=k}^n x^{n-k} y^{k-1}$$
+og brug det på
+$$\left| \frac{(z_0 + h)^n - z_0^n}{h} \right|$$ 
+og sæt det ind i $B(h)$\\
+\textbf{6.} \ Da $A(h)$ består af endelige elementer, og da $z^k$ er komplekst differentiabel, så ved vi at for $h \rightarrow 0$, så vil
+$$ \frac{(z_0 + h)^k + z_0^k}{h} - k z_0^{k-1} \rightarrow 0$$ \\
+\textbf{7.} \ Saml $|\epsilon|(h)|$ igen og husk trekantsuligheden.
+\end{framed}
+
+\newpage
+\begin{proof}[\textbf{Bevis}]
+\textbf{Først} ser vi at rækken $\sum\limits_{n=1}^\infty n a_n z^{n-1}$ konvergerer for $\left| z \right| < \rho$  \ \textbf{jf. Lemma 1.11.} \\ \\
+
+\textbf{Nu viser vi at $f$ er differentiable i $z_0$, for fast $ \left| z_0 \right| < \rho$:} \\
+Lad $z_0 \in K(0, \rho)$ og vælg $r$, så $\left| z_0 \right| < r < \rho $. \\
+Lad $h \in \mathbb{C}$, så $0 < \left| h \right| < r - \left| z_0 \right|$. Definerer $\epsilon (h)$
+\begin{align*}
+\epsilon(h):&= \frac{f(z_0 + h) - f(z_0)}{h} - \sum\limits_{n=1}^\infty n a_n z_0^{n-1} \\
+&= \sum\limits_{n=1}^\infty a_n ( \frac{(z_0 + h)^n - z_0^n}{h} - n z_0^{n-1})
+\end{align*}
+Hvis $f$ er differentiabel i $z_0$, gælder det, at $\epsilon (h) \rightarrow 0$ for $h \rightarrow 0$.\\
+Så lad $\epsilon > 0$ og find $\delta > 0$ så $\left| \epsilon (h) \right| < \epsilon$, for  $\left|  h \right| < \delta$. \\
+\ Nu bruger vi, at rækken $\sum\limits_{n=1}^\infty n a_n z^{n-1}$ konvergerer, så vi kan vælge et $N$, så
+$$\sum\limits_{N + 1}^\infty n \left| a_n \right| r^{n-1} < \frac{\epsilon}{4}.$$
+Nu deler vi $\epsilon (h)$ så $\epsilon (h) = A(h) + B(h)$, med
+$$ A(h) = \sum\limits_{n=1}^N a_n ( \frac{(z_0 + h)^n - z_0^n}{h} - n z_0^{n-1}) $$
+og
+$$B(h) = \sum\limits_{n=N+1}^\infty a_n (\frac{(z_0 + h)^n - z_0^n}{h} - n z_0^{n-1}) $$
+Nu husker vi (fra \textbf{Teknisk}), at
+$$ \frac{x^n - y^n}{x-y} = \sum\limits_{n=k}^n x^{n-k} y^{k-1}$$
+Og dermed er
+\begin{align*}
+\left| \frac{(z_0 + h)^n - z_0^n}{h} \right| &= \left| \sum\limits_{k=1}^n (z_0 + h)^{n-k} z_0^{k-1} \right| \\
+\text{(trekantsuligheden)} \ \ \ &\leq \sum\limits_{k=1}^n \left| z_0 + h \right|^{n-k} \left| z_0 \right| ^{k-1} \\
+(\text{husk, at} \ \left| z_0 + h \right| < r) \ \ \ &\leq \sum\limits_{k=1}^n r^{n-k} r ^{k-1} \\
+&= \sum\limits_{k=1}^n r^{n-1} \\
+&= nr^{n-1}
+\end{align*}
+Det vil sige
+\begin{align*}
+\left| B(h) \right| &= \left| \sum\limits_{n=N+1}^\infty a_n ( \frac{(z_0 + h)^n - z_0^n}{h} - n z_0^{n-1}) \right| \\
+&\leq \sum\limits_{n=N+1}^\infty \left| a_n (\frac{(z_0 + h)^n - z_0^n}{h}) \right| + \left| a_n (- n z_0^{n-1}) \right| \\
+&\leq \sum\limits_{n=N+1}^\infty \left| a_n (\frac{(z_0 + h)^n - z_0^n}{h}) \right| + \sum\limits_{n=N+1}^\infty \left| a_n ( n z_0^{n-1}) \right| \\
+\text{Nu husker vi at} \left| a_n ( n z_0^{n-1}) \right| \leq \left| a_n \right| n r^{n-1} \\
+&\leq \sum\limits_{n=N+1}^\infty \vert a_n \vert n r^{n-1} + \sum\limits_{n=N+1}^\infty \left| a_n \right| n r^{n-1} \\
+\text{Husk:} \sum\limits_{N + 1}^\infty n \left| a_n \right| r^{n-1} < \frac{\epsilon}{4} \\
+&\leq \frac{\epsilon}{4} + \frac{\epsilon}{4} \\
+&= \frac{\epsilon}{2}
+\end{align*}
+Da $A(h)$ består af endelige elementer, og da $z^k$ er komplekst differentiabel, så ved vi at for $h \rightarrow 0$, så vil
+$$ \frac{(z_0 + h)^k + z_0^k}{h} - k z_0^{k-1} \rightarrow 0$$
+og så vil $A(h) \rightarrow 0$ for $h \rightarrow 0$. Altså
+$$ \exists \delta > 0 : \left| A(h) \right| < \frac{\epsilon}{2} \ \ \text{for} \ \left| h \right| < \delta.$$
+Det betyder, at
+\begin{align*}
+\left| \epsilon (h) \right| &\leq \left| A(h) \right| + \left| B(h) \right| \\
+&< \frac{\epsilon}{2} + \frac{\epsilon}{2} \\
+&= \epsilon.
+\end{align*}
+for $\left| h \right| < \delta$.
+\end{proof}
+
+
+
+
+
+
+
+
+
+\newpage
+\begin{Prob}{\textbf{Lemma 2.12}} \\
+
+Lad $f: G \rightarrow \mathbb{C}$ være en kontinuert funktion i et område $G \subseteq \mathbb{C}$ og antag $\int_\gamma f= 0$ for enhver lukket trappelinje i $G$. Så har $f$ en stamfunktion i $G$.
+\end{Prob}
+
+\begin{framed}
+\textbf{Bevisfremgang} \\
+\textbf{1.} \ Vælg $z_0, z \in G$ defineres trappelinjerne $\gamma_z$ og $\delta_z$ som er forskellige, men begge går fra $z_0$ og $z$, så er $ \gamma := \delta_z \cup (- \gamma_z)$, så
+$$ F(z) = \int_{\gamma} f = \int_{\delta_z} f - \int_{\gamma_z} f = 0.$$ \\
+\textbf{2.} \  $\epsilon,r$-Bevis: Vil vise at $F$ i $z_1 \in G$ med $F'(z_1) = f(z_1)$. Så lader vi $\epsilon > 0$. Da $f$ er kontinuert i $z_1$, så eksisterer $r > 0$ sådan, at $K(z_1,r) \subseteq G$ og
+$$\left| f(z) - f(z_1) \right| \leq \epsilon, \ \ \text{for} \ z \in K(z_1,r).$$  \\
+\textbf{3.} \ For $h = h_1 + i h_2, \ 0 < \left| h \right| < r$, betragt trappelinjen $\ell$, som går fra $z_1$ til $z_1 + h$. Nu giver $\gamma_{z_1} \cup \ell$ en trappelinje fra $z_0$ til $z_1 + h$, så
+$$ F(z_1 + h) - F(z_1) = \int_{\gamma_{z_1} \cup \ell} f - \int_{\gamma_{z_1}} f = \int_\ell f. $$ \\
+\textbf{4.} \ Da en konstant $c$ har stamfunktionen $cz$, giver sætning 2.11, at
+$$\int_\ell c = c(z_1 + h) - cz_1 = c \cdot h$$
+Ved at sætte $c=f(z_1)$, får vi 
+$$\frac{F(z_1 + h) - F(z_1)}{h} - f(z_1) = \frac{1}{h} \int_\ell (f(z) - f(z_1)) dz$$
+(middelværdisætningen). \\
+\textbf{5.} \ Brug estimationslemmaet og få dette:
+$$\left| \frac{F(z_1 + h) - F(z_1)}{h} - f(z_1) \right| = 2 \epsilon$$
+\end{framed}
+
+\newpage
+\begin{proof}[\textbf{Bevis}]
+Vælger $z_0 \in G$. For $z \in G$ defineres
+$$ F(z) = \int_{\gamma_z} f $$
+hvor $\gamma_z$ vælges til en trappelinje i $G$ fra $z_0$ fra $z$ - dette er muligt da $G$ er et område. \\
+Valget af trappelinje er ligegyldigt. \\
+Nu vælges en anden trappelinje, $\delta_z$ fra $z_0$ til $z$ og så er
+$$ \gamma := \delta_z \cup (- \gamma_z) $$
+en lukket trappelinje og så gælder det, at
+$$ 0 = \int_{\gamma} f = \int_{\delta_z} f - \int_{\gamma_z} f. $$
+For at kunne vise differentiabiliteten af $F$ i $z_1 \in G$ med $F'(z_1) = f(z_1)$, så lader vi $\epsilon > 0$. Da $f$ er kontinuert i $z_1$, så eksisterer $r > 0$ sådan, at $K(z_1,r) \subseteq G$ og
+\begin{equation}
+\left| f(z) - f(z_1) \right| \leq \epsilon, \ \ \text{for} \ z \in K(z_1,r).
+\end{equation}
+For $h = h_1 + i h_2$ sådan, at $0 < \left| h \right| < r$, betragter vi trappelinjen $\ell$, som går fra $z_1$ til $z_1 + h$. Denne trappelinje ligger klart inden i $K(z_1,r)$ og dermed også inden i $G$. \\
+Nu kobler vi $\ell$ sammen med $\gamma_{z_1}$, så vi får trappelinjen $\gamma_{z_1} \cup \ell$ fra $z_0$ til $z_1 + h$ og dermed får vi
+$$ F(z_1 + h) - F(z_1) = \int_{\gamma_{z_1} \cup \ell} f - \int_{\gamma_{z_1}} f = \int_\ell f $$
+Da en konstant $c$ har stamfunktionen $cz$, giver sætning 2.11, at
+$$\int_\ell c = c(z_1 + h) - cz_1 = c \cdot h$$
+Ved at sætte $c=f(z_1)$, får vi 
+$$\frac{F(z_1 + h) - F(z_1)}{h} - f(z_1) = \frac{1}{h} \int_\ell (f(z) - f(z_1)) dz$$
+hvor middelværdisætningen giver os at $\frac{F(z_1 + h) - F(z_1)}{h} = f(z_1)$, hvis $\int f = F$. \\
+
+Så giver (4), Estimationslemmaet (2.8) og bemærkning 2.9, at
+\begin{align*}
+\left| \frac{F(z_1 + h) - F(z_1)}{h} - f(z_1) \right| &= \frac{1}{h} \int_\ell (f(z) - f(z_1))dz \\
+\text{(her bruges de)} \ \ \ &\leq \frac{1}{h} \epsilon L(\ell) \\
+&\leq \frac{1}{\vert h \vert} 2 \left| h \right| \epsilon \\
+&= 2 \epsilon
+\end{align*}
+\end{proof}
+
+
+
+
+
+
+
+
+\newpage
+\begin{Prob}{\textbf{Lemma 3.2, Goursat's lemma}} \\
+
+Lad $G \subseteq \mathbb{C}$ være åben og lad $f \in \mathcal{H} (G)$. Så
+$$ \int_{\partial \vartriangle} f(z) dz = 0$$
+for enhver solid trekant $\vartriangle \subseteq G$, hvilket betyder, at alle punkter, som begrænses af siderne (inklusive siderne), er indeholdt i $G$.
+\end{Prob}
+
+
+\begin{framed}
+$\vartriangle \supseteq \vartriangle_1 \supseteq \vartriangle_2 \supseteq ...,$ så er $\cap{n=1}^\infty \vartriangle_n = \{z_0\},$ altså netop ét punkt. (Bolzano-Weierstass' sætning) \\
+\end{framed}
+
+\begin{framed}
+\textbf{Bevisfremgang} \\
+\includegraphics[scale=0.5]{trekant} \\
+\textbf{1.} \ Sæt $I = \int_{\partial \vartriangle} f$ og viser $I=0$. \\
+\textbf{2.} \ Brug tegningen og vis, at for $I = \int_{\partial \vartriangle} f = \sum\limits_{i=1}^4 \int_{\partial \vartriangle^i} f$, men så må $\left| \int_{\partial \vartriangle^j} f \right| \geq \frac{1}{4}|I|$, for, hvis ikke $\left| I \right| = \left| \sum\limits_{i=1}^4 \int_{\partial \vartriangle^j} f \right| \leq  \sum\limits_{i=1}^4 \left| \int_{\partial \vartriangle^j} f \right| < \sum\limits_{i=1}^4 \frac{1}{4} \left| I \right| = |I| \ \lightning$ \\
+\textbf{3.} \ Kald en trekant, som opfylder 2., for $\vartriangle_1$ så 
+$$ \left| I \right| \leq  4 \left| \int_{\partial \vartriangle_1} f \right|$$
+Del denne ind i 4 trekanter og gentag, så
+$$ \left| I \right| \leq 4^n  \left| \int_{\partial \vartriangle_n} f \right|$$ \\
+\textbf{4.} \  $\epsilon,r$-Bevis: Da $f$ er holomord i $z_0$, givet$\epsilon > 0$, så findes $r > 0$ så
+$$\left| f(z) - f(z_0) - f'(z_0)(z-z_0) \right| \leq \epsilon \left| z-z_0 \right| \ \ \text{for } z \in K(z_0,r). $$\\
+\textbf{5.} \ Se på $\int_{\partial \vartriangle_n} f(z) dz = \int_{\partial \vartriangle_n} f(z) - f(z_0) - f'(z_0)(z-z_0)dz
++ \int_{\partial \vartriangle_n} f(z_0) + f'(z_0) (z-z_0) dz$ \\
+\textbf{6.} \ Theorem 2.11: $\int_{\partial \vartriangle_n} f (z) + f'(z_0)(z-z_0) dz = 0$ \\
+\textbf{7.} \ Estimationslemma, på $\left| \int_{\vartriangle_n} f \right|$ og husk, at  $L(\partial \vartriangle_n) = 2^{-n} L (\partial \vartriangle)$ og $a,b \in \vartriangle_n \ \Rightarrow \ \left| a-b \right| \leq \frac{1}{2} L (\partial \vartriangle_n)$
+\end{framed}
+
+\newpage
+\includegraphics[scale=1]{trekant}
+\begin{proof}[\textbf{Bevis}]
+Sætter $I = \int_{\partial \vartriangle} f$ og viser $I=0$ \\
+
+Så vi deler $\vartriangle$ ind i fire trekanter og ser at $(\vartriangle^1, \vartriangle^4), \ (\vartriangle^3, \vartriangle^4)$ og $(\vartriangle^2, \vartriangle^4)$ har en delt side med modsatrettede orienteringer, så vi får, at
+$$ I = \int_{\partial \vartriangle} f = \sum\limits_{i=1}^4 \int_{\partial \vartriangle^i} f$$
+Der må altså findes $j \in \{ 1, 2, 3, 4 \}$, sådan, at 
+$$ \left| \int_{\partial \vartriangle^j} f \right| \geq \frac{1}{4} \left| I \right| $$
+For hvis ikke, så
+$$\left| I \right| = \left| \sum\limits_{i=1}^4 \int_{\partial \vartriangle^j} f \right| \leq  \sum\limits_{i=1}^4 \left| \int_{\partial \vartriangle^j} f \right| < \sum\limits_{i=1}^4 \frac{1}{4} \left| I \right| = I \ \lightning$$
+hvilket jo er umuligt! \\
+Så vi kalder den trekant som opfylder $ \left| \int_{\partial \vartriangle^j} f \right| \geq \frac{1}{4}\left| I \right| $ for $\vartriangle_1$ og så
+$$ \frac{1}{4} \left| I \right| \leq \left| \int_{\partial \vartriangle_1} f \right|$$
+Nu deler vi $\vartriangle_1$ ind i 4 trekanter (på sammme måde) og gentager proceduren, så $\vartriangle \supseteq \vartriangle_1 \supseteq \vartriangle_2 \supseteq ... \supseteq \vartriangle_n$, så
+$$ \left| \int_{\partial \vartriangle_n} f \right| \geq \frac{1}{4^n} \left| I \right|$$
+DVS
+$$ \left| I \right| \leq 4^n  \left| \int_{\partial \vartriangle_n} f \right|$$
+
+Vi bruger nu, at $f$ er holomorf i $z_0$ og ser på $z_0$. Givet $\epsilon > 0$, så findes $r > 0$ sådan, at
+\begin{align*}
+\left| \frac{f(z) - f(z_0)}{z-z_0} - f'(z_0) \right| &\leq \epsilon  \ \ \text{for } z \in K(z_0,r) \\
+\left| f(z) - f(z_0) - f'(z_0)(z-z_0) \right| &\leq \epsilon \left| z-z_0 \right|
+\end{align*}
+Ser på $\int_{\partial \vartriangle_n} f$,
+\begin{align*}
+\int_{\partial \vartriangle_n} f(z) dz &= \int_{\partial \vartriangle_n} f(z) - f(z_0) - f'(z_0)(z-z_0)dz \\
+&+ \int_{\partial \vartriangle_n} f(z_0) + f'(z_0) (z-z_0) dz
+\end{align*}
+Men da giver \textbf{sætning 2.11}, at
+$$\int_{\partial \vartriangle_n} f (z) + f'(z_0)(z-z_0) dz = 0$$
+(da det er et polynomium og $\partial \vartriangle_n$ er lukket), så har vi at
+$$\left| \int_{\partial \vartriangle_n} f (z) dz \right| = \left| \int_{\partial  \vartriangle_n} f(z) - f(z_0)-f'(z_0)(z-z_0)dz \right|$$
+\textbf{Estimationslemmaet} giver nu, at
+\begin{align*}
+\left| \int_{\partial \vartriangle_n} f(z) dz \right| &\leq \max_{z \in \partial \vartriangle_n} \left| f(z)-f(z_0) - f'(z_0)(z-z_0) \right| \cdot L(\partial \vartriangle_n) \\
+\text{(for }n\text{ stor nok)} \ &\leq  \max_{z \in \partial \vartriangle_n} \epsilon \left| z- z_0 \right| \cdot L(\partial \vartriangle_n) \\
+\text{(Faktum 3) } &\leq \epsilon \frac{1}{2} L(\partial \vartriangle_n) L(\partial \vartriangle_n) \\
+\text{(Faktum 2) } &= \frac{\epsilon}{2} (2^{-n} L(\partial \vartriangle))^2 \\
+&= \frac{\epsilon}{2} 4^{-n} L (\partial \vartriangle)
+\end{align*}
+Ser nu igen på $\left| I \right|$ og indsætter
+\begin{align*}
+ \left| I \right| &\leq 4^n \left| \int_{\partial \vartriangle_n} f \right| \\
+ &\leq 4^n \frac{\epsilon}{2} 4^{-n} L(\partial \vartriangle) \\
+ &= \frac{\epsilon}{2} L(\partial \vartriangle)
+\end{align*}
+\end{proof}
+
+
+
+
+
+
+
+\newpage
+\begin{Prob}{\textbf{Theorem 4.8, Cauchy's Integral Formel for den n'te afledte}} \\
+
+Lad $f \in \mathcal{H}(G)$. Så er $f$ uendeligt ofte differentiabel og Taylorrækken om $a \in G$ er konvergent med sumfunktionen $f$ i den største åbne cirkelskive $K(a, \rho) \subseteq G$, som er givet ved
+\begin{equation}
+f(z)= \sum\limits_{n=0}^\infty \frac{f^{(n)}(a)}{n!} (z-a)^n \ \text{ for } z \in K(a,\rho)
+\end{equation}
+Antag, at $\overline{K(a,r)} \subseteq G$. For tilfældig $z_0 \in K(a,r)$ har vi nu, at
+\begin{equation}
+f^{(n)}(z_0) = \frac{n!}{2 \pi i} \int_{\partial K(a,r)} \frac{f(a)}{(z-z_0)^{n+1}} dz, \ \ n = 0, 1, ...,
+\end{equation}
+som kaldes Cauchys Integral Formel for den n'te afledte.
+\end{Prob}
+
+\begin{framed}
+\textbf{Bevisfremgang} \\
+\textbf{1.} \ Lad $a \in G$, bestem størst mulig $\rho$ så $K(a,\rho) \subseteq G$. Betragt funktionen $ z \mapsto \frac{f(z)}{(z-a)^{n+1}}$, som er holomorf i $G \setminus \{a\}$\\
+\textbf{2.} \ Fra Eksempel 3.7 følger det, at tallene $ a_n (r) = \frac{1}{2 \pi i} \int_{\partial K(a,r)} \frac{f(z) dz}{(z-a)^{n+1}} $ er uafhængige af $r$ for $0 < r < \rho$. Vi kalder dem nu $a_n, \ \ n= 0,1,2,...$ \\
+\textbf{3.} \ Vælger $z_0 \in K(a,\rho)$ og $z_0$, så $\left| z_0 - a \right| < r < \rho$, så giver CIF (Theorem 3.8), at $ f(z_0) = \frac{1}{2 \pi i} \int_{\partial K(a,r)} \frac{f(z)}{z-z_0}dz$ .\\
+\textbf{4.} \ Vis først (5), ved at skrive $\frac{1}{z-z_0}$ om til en sum af en konvergerende følge $\frac{1}{z-z_0} = \frac{1}{z-a} \sum_{n=0}^\infty \left(\frac{z_0-a}{z-a}\right)^n$\\
+\textbf{5.} \ Dette viser, at
+$$ \frac{f(z)}{z-z_0} = \sum_{n=0}^\infty g_n(z), \text{ hvor } g_n(z) = \frac{f(z)(z_0-a)^n}{(z-a)^{n+1}}$$ \\
+\textbf{6.} \ Da $\partial K(a,r)$ er lukket og begrænset, har vi nu $M= \sup \{ \left| f(z) \right|  \ | z \in \partial K(a,r) \} < \infty$. Den uendelige række $\sum_{n=0}^\infty g_n(z)$ konvergerer uniformt for $z \in K(a,r)$.  \\
+\textbf{7.} \ Brug Weierstrass' M-test $(\left| z-a \right| = r)$.\\
+\textbf{8.} \ Sætning 4.6 (ii) giver, at man kan integrere ledvist, så 
+$f(z_0) = \sum_{n=0}^\infty a_n (z_0 - a)^n$ $\Rightarrow$ $\sum_0^\infty a_n(z-a)^n$ er konvergent med sumfunktionen $f(z)$ for alle $z \in K(0, \rho)$. \\
+\textbf{9.} \ Sæt nu $g_n(z) = f (z+a)$, så $g(z) = \sum_{n=0}^\infty a_n z^n$ for $z \in K(0,\rho)$.Korollar 1.13 $\Rightarrow$ potensrækken for $g$ er $C^\infty$ $\Rightarrow$ $f$ er $C^\infty$ for $z \in K(a, \rho)$. Nu bruger vi at koefficienterne i potensrækken $g(z)=\sum_{n=0}^\infty a_n z^n$ er givet ved $_n= \frac{g^{(n)}(0)}{n!}$ (Husk $g^{(n)}(0)=f^{(n)}(a)$). Det beviser (5).\\
+\textbf{10.} \ Vis nu (6): At $ a_n (r) = \frac{1}{2 \pi i} \int_{\partial K(a,r)} \frac{f(z) dz}{(z-a)^{n+1}}=a_n $, viser nu, at
+$$f^{(n)}(a) = \frac{n!}{2 \pi i} \int_{\partial K(a,r)} \frac{f(z)}{(z-a)^{n+1}}dz, \ \ 0<r<\rho$$\\
+\textbf{11.} \ Antag nu, at $z_0 \in K(a,r), \bar{K(a,r)} \subseteq G$. \\
+Hvis $0<s<r-|z_0-a|$ så $\overline{K(z_0,s)} \subseteq K(a,r)$, så, hvis vi erstatter $a$ med $a_0$ og $r$ med $s$ i ovenstående, så giver Eksempel 3.7, at om intgralet tages på $\partial K(z_0,s)$ eller $\partial K(a,r)$ er ligegyldigt.
+\end{framed}
+
+\newpage
+\begin{proof}[\textbf{Bevis}]
+Lad $a \in G$, bestemmer $\rho$ så $K(a,\rho) \subseteq G$, $\rho$ størst muligt. \\
+Betragt funktionen 
+$$ z \mapsto \frac{f(z)}{(z-a)^{n+1}}$$
+som er holomorf i $G \setminus \{a\}$. Fra Eksempel 3.7 følger det, at tallene
+$$ a_n (r) = \frac{1}{2 \pi i} \int_{\partial K(a,r)} \frac{f(z) dz}{(z-a)^{n+1}} $$
+er uafhængige af $r$ for $0 < r < \rho$. Vi kalder dem nu $a_n, \ \ n= 0,1,2,...$ \\
+
+Vælger $z_0 \in K(a,\rho)$ og $z_0$, så $\left| z_0 - a \right| < r < \rho$, så giver CIF (Theorem 3.8), at
+$$ f(z_0) = \frac{1}{2 \pi i} \int_{\partial K(a,r)} \frac{f(z)}{z-z_0}dz$$
+Vi beviser nu (5), nemlig at $f(z)= \sum\limits_{n=0}^\infty \frac{f^{(n)}(a)}{n!} (z-a)^n \ \text{ for } z \in K(a,\rho)$, ved at skrive $\frac{1}{z-z_0}$ om til en sum af en konvergerende følge: \\
+
+Bemærker først, at for $z \in \partial K(a,r)$, så gælder det, at
+\begin{align*}
+\frac{1}{z-z_0} &= \frac{1}{(z-a)(z_0)} = \frac{1}{(z-a)(1- (\frac{z_0-a}{z-a}))} \\
+\left( \text{Da } \left|\frac{z_0-a}{z-a} \right| = \frac{\left|z_0-a \right|}{r} < 1 (\text{ husk at } z \in \partial K(a,r) \right)
+&= \frac{1}{z-a} \sum_{n=0}^\infty \left(\frac{z_0-a}{z-a}\right)^n
+\end{align*}
+Dette viser, at
+$$ \frac{f(z)}{z-z_0} = \sum_{n=0}^\infty g_n(z), \text{ hvor } g_n(z) = \frac{f(z)(z_0-a)^n}{(z-a)^{n+1}}$$
+
+Da $\partial K(a,r)$ er lukket og begrænset, har vi nu
+$$M= \sup \{ \left| f(z) \right|  \ | z \in \partial K(a,r) \} < \infty$$
+Den uendelige række $\sum_{n=0}^\infty g_n(z)$ konvergerer uniformt for $z \in K(a,r)$. \\
+Bruger Weierstrass' M-test $(\left| z-a \right| = r)$:
+$$\left| g_n(z) \right| \leq \frac{|f(z)|}{|z-a|} \cdot \frac{|z_0-a|^n}{|z-a|^n}$$
+Så
+$$\sum_{n=0}^\infty g_n(z) \leq \sum_{n=0}^\infty w_n = \frac{M}{r} \sum_{n=0}^\infty \left( \frac{|z_0-a|}{r} \right)^n < \infty$$
+Sætning 4.6 (ii) giver, at man kan integrere ledvist, så 
+\begin{align*}
+f(z_0) &= \frac{1}{2\pi i} \int_{\partial K(a,r)} \frac{f(z)}{z-z_0}dz \\
+&= \sum_{n=0}^\infty \frac{1}{2 \pi i} \int_{\partial K(a,r)} g_n(z) dz \\
+&= \sum_{n=0}^\infty a_n (z_0 - a)^n
+\end{align*}
+Dette viser, at potensrækken $\sum_0^\infty a_n(z-a)^n$ er konvergent med sumfunktionen $f(z)$ for alle $z \in K(0, \rho)$. Sætter nu $g_n(z) = f (z+a)$, så
+$$g(z) = \sum_{n=0}^\infty a_n z^n, \ \ \text{for } z \in K(0,\rho)$$
+Da $g$ er givet ved en potensrække er den uendelig-gange differentiabel i $K(0,\rho)$ (jf. Korollar 1.13) og dermed også $f(z)$ for $z \in K(a, \rho)$.
+Nu bruger vi at koefficienterne i potensrækken $g(z)=\sum_{n=0}^\infty a_n z^n$ er givet ved
+$$a_n= \frac{g^{(n)}(0)}{n!}  \ \ \ \text{jf. Korollar 1.13}$$
+og finder at
+$$a_n= \frac{f^{(n)}(a)}{n!}$$
+Dermed er (5), nemlig at $f(z)= \sum\limits_{n=0}^\infty \frac{f^{(n)}(a)}{n!} (z-a)^n \ \text{ for } z \in K(a,\rho)$ \\ \\
+Nu viser vi (6), nemlig at $f^{(n)}(z_0) = \frac{n!}{2 \pi i} \int_{\partial K(a,r)} \frac{f(a)}{(z-z_0)^{n+1}} dz, \ \ n = 0, 1, ...,$, for $\overline{K(a,r)} \subseteq G$ og $z_0 \in K(a,r)$. \\
+
+At $ a_n (r) = \frac{1}{2 \pi i} \int_{\partial K(a,r)} \frac{f(z) dz}{(z-a)^{n+1}}=a_n $, viser nu, at
+$$f^{(n)}(a) = \frac{n!}{2 \pi i} \int_{\partial K(a,r)} \frac{f(z)}{(z-a)^{n+1}}dz, \ \ 0<r<\rho$$
+Antag nu, at $z_0 \in K(a,r), \overline{K(a,r)} \subseteq G$. \\
+Hvis $0<s<r-|z_0-a|$ så $\overline{K(z_0,s)} \subseteq K(a,r)$, så, hvis vi erstatter $a$ med $a_0$ og $r$ med $s$ i $f^{(n)}(a) = \frac{n!}{2 \pi i} \int_{\partial K(a,r)} \frac{f(z)}{(z-a)^{n+1}}dz,$ giver det
+\begin{align*}
+f^{(n)}(z_0) &= \frac{n!}{2 \pi i} \int_{\partial K(z_0,s)} \frac{f(z)}{(z-z_0^{n+1}}dz \\ \\
+\text{(Eksempel 3.7)} \ \ &= \frac{n!}{2 \pi i} \int_{\partial K(a,r)} \frac{f(z)}{(z-z_0^{n+1}}dz
+\end{align*}
+Dermed er (6) bevist.
+\end{proof}
+
+
+
+
+
+
+
+
+\newpage
+\begin{Prob}{\textbf{Theorem 4.17}} \\
+
+Lad $G \subseteq \mathbb{C}$ være åben. Hvis en følge $f_1,f_2,...$ fra $\mathcal{H}(G)$ konvergerer lokalt uniformt i $G$ mod en funktion $f$, så er $f \in \mathcal{H}(G)$ og følgen $f'_1,f'_2,...$ af de afledte konvergerer lokalt uniformt i $G$ mod $f'$.
+\end{Prob}
+
+\begin{framed}
+\textbf{Bevisfremgang} \\
+\textbf{1.} \ Lad $a \in G$ og $\overline{K(a,r)} \subseteq G$ være givet således, at $f_n \rightarrow f$ uniformt på $\overline{K(a,r)} \subseteq G \Rightarrow$ (Theorem 4.2) $f$ er kontinuert i hvert punkt i $K(a,r)$. \\
+\textbf{2.} \ $\forall\vartriangle \subseteq K(a,r)$, har vi, at $\int_{\partial \vartriangle} f_n = 0$ (Theorem 3.3).  \\
+\textbf{3.} \ Theorem 4.6, giver at $\int_{\partial  \vartriangle} f = 0.$ \\
+\textbf{4.} \ Moreras Sætning giver nu, at $f$ er holomorf.\\
+\textbf{5.} \ Theorem 4.8 giver nu 
+$$f'_n(z_0)-f'(z_0) = \frac{1}{2 \pi i} \int_{\partial K(a,r)} \frac{f_n(z)-f(z)}{(z-z_0)^2}dz$$\\
+\textbf{6.} \ For $z_0 \in \overline{K(a,\frac{r}{2})}$ og $z \in \partial K(a,r)$ har vi, at $|(z-z_0)^2| \geq (\frac{r}{2})^2$, så brug Estimationslemmaet. \\
+\end{framed}
+
+\newpage
+\begin{proof}[\textbf{Bevis}]
+Lad $a \in G$ og $\overline{K(a,r)} \subseteq G$ være givet således, at $f_n \rightarrow f$ uniformt på $\bar{K(a,r)} \subseteq G$. \\
+Så giver Theorem 4.2, at $f$ er kontinuert i hvert punkt i $K(a,r)$. \\
+
+For enhver trekant, $\vartriangle \subseteq K(a,r)$, har vi, at $\int_{\partial \vartriangle} f_n = 0$ ved Theorem 3.3 (Cauchys Integral Sætning for stjerneformede områder). \\
+
+Da $f_n \rightarrow f$ uniformt på $\partial \vartriangle$, får vi, at 
+$$0 = \int_{\partial \vartriangle} f_n \rightarrow \int_{\partial  \vartriangle} f$$
+jf. Theorem 4.6 (i), så
+$$\int_{\partial  \vartriangle} f = 0.$$
+
+Nu giver Moreras Sætning, at $f$ er holomorf i $K(a,r)$, og da $a$ er tilfældig har vi bevist at $f \in \mathcal{H}(G)$. \\
+
+Theorem 4.8 (Cauchys Integral Formel for den afledte) giver os, at for $z_0 \in K(a,r)$ så er
+$$f'_n(z_0)-f'(z_0) = \frac{1}{2 \pi i} \int_{\partial K(a,r)} \frac{f_n(z)-f(z)}{(z-z_0)^2}dz$$
+For $z_0 \in \overline{K(a, \frac{r}{2})}$ og $z \in \partial K(a,r)$ har vi, at $|(z-z_0)^2| \geq (\frac{r}{2})^2$, så jf. Lemma 2.8 (Estimationslemmaet) gælder 
+$$|f'_n(z_0) - f'(z_0)| \leq \frac{2 \pi r}{2 \pi} \left(\frac{2}{r}\right)^2 \sup_{z \in \partial K(a,r)}|f_n(z)-f(z)|$$
+hvilket styrer
+$$\sup_{z_0 \in \bar{K(a,\frac{r}{2})}}|f'_n (z_0) - f'(z_0)| \leq \frac{4}{r} \sup_{z \in \partial K(a,r)}|f_n(z)-f(z)|$$
+Dette viser, at $f'_n \rightarrow f'$ uniformt i $\overline{K(a,r/2)}$, og da $a \in G$ er tilfældigt, er det bevist, at $f'_n \rightarrow f'$ lokalt uniformt i $G$.
+\end{proof}
+
+
+
+
+
+
+
+\newpage
+\begin{Prob}{\textbf{Theorem 4.22, Liouville's sætning}} \\
+
+En begrænset og hel funktion er konstant.
+\end{Prob}
+
+\begin{framed}
+\textbf{Bevisfremgang} \\
+\textbf{1.} \ Vi har at funktionen er lig sin Taylorrække omkring $0$, da den er hel. \\
+\textbf{2.} \  $f$ er begrænset $ \Rightarrow |f(z)| \leq M, \ \ \forall z \in \mathbb{C}$\\
+\textbf{3.} \ Vi skal vise, at $f^{(n)}(0) = 0$ for alle $n \geq 1$, så bruger Theorem 4.8 (anden del). \\
+\textbf{4.} \ Brug estimationslemmaet, og få $f^{(n)}(0)| \leq n! \cdot \frac{M}{r^n}$ \\
+\textbf{5.} \ Lad $r \rightarrow \infty$ 
+\end{framed}
+
+\newpage
+\begin{proof}[\textbf{Bevis}] 
+Vi har at funktionen er lig sin Taylorrække omkring $0$:
+$$f(z) = \sum_{n=0}^\infty \frac{f^{(n)}(0)}{n!}z^n$$
+da det for hele funktioner gælder at de er lig deres Taylorrækker, givet ved 
+$$f(z)= \sum\limits_{n=0}^\infty \frac{f^{(n)}(a)}{n!} (z-a)^n,$$ 
+for alle $z,a \in \mathbb{C}$og især for $a=0$. \\
+
+Da $f$ er begrænset, kan det antages, at
+$$|f(z)| \leq M, \ \ \forall z \in \mathbb{C}$$
+
+Vi skal vise, at $f^{(n)}(0) = 0$ for alle $n \geq 1$. \\
+Theorem 4.8 (Cauchys Integral Formel for den n'te afledte), giver, at for hvert $r>0$, så er
+$$|f^{(n)}(0)| = \left| \frac{n!}{2 \pi i} \int_{\partial K(0,r)} \frac{f(z)}{z^{n+1}}dz \right|$$
+Nu giver Lemma 2.8 (Estimationslemmaet), at
+\begin{align*}
+|f^{(n)}(0)| &\leq \frac{n!}{2 \pi}  \cdot L(\partial K(0,r))  \cdot \max_{|z|=r} \left\{ \left| \frac{f(z)}{z^{n+1}} \right| \right\} \\
+&\leq \frac{n!}{2 \pi}  \cdot 2 \pi r \cdot \frac{M}{r^{n+1}}  \\
+&= n! \cdot \frac{M}{r^n}
+\end{align*}
+Vi lader nu $r \rightarrow \infty$ (hvilket vi kan, da $f$ er hel) og ser, at
+$$|f^{(n)}(0)| \leq  n! \cdot \frac{M}{r^n} \rightarrow 0$$
+så
+$$|f^{(n)}(0)| \leq 0  \ \Leftrightarrow \ f^{(n)}(0) = 0, \ \ \forall n \geq 1,$$
+og at $f$ er konstant følger nu af dens Taylorudvikling.
+\end{proof}
+
+
+
+
+
+
+
+
+\newpage
+\begin{Prob}{\textbf{Theorem 5.16}} \\
+
+Den følgende potensrække udvikling gælder
+$$\text{Log}(1+z) = z - \frac{z^2}{2} + \frac{z^3}{3} - \frac{z^4}{4} + - ...  \ \ |z|<1$$
+\end{Prob}
+
+\begin{framed}
+\textbf{Bevisfremgang} \\
+\textbf{1.} \ Vi ved, at $f(z) = \text{Log}(1+z)$ er holomorf i $G = \mathbb{C} \setminus (-\infty,-1]$ (Theorem 5.14)\\
+\textbf{2.} \ Brug Theorem 4.8 (Taylorrækken omkring $0$) \\
+\textbf{3.} \ $f^{(n)}(z)= (-1)^{n-1} (n-1)! (1+z)^{-n}$ \\
+\textbf{4.} \ Indsæt i Taylorrækken, husk $f(0)=0$.
+\end{framed}
+
+\newpage
+\begin{proof}[\textbf{Bevis}]
+Vi ved fra Theorem 5.14, at $f(z) = \text{Log}(1+z)$ er holomorf i $G = \mathbb{C} \setminus (-\infty,-1]$ \\
+Theorem 4.8 (Cauchys Integral Formel for den n'te afledte), giver, at
+$$f(z) = \sum_{n=0}^\infty \frac{f^{(n)}(0)}{n!}z^n$$
+for den størst mulige åbne cirkelskive med centrum i ${0}$, som er indeholdt i $G$, dvs. for $z \in K(0,1)$. \\
+Vi ser nu, at
+$$f'(z) = \frac{1}{1+z}$$
+Nu ser vi så, at 
+$$f^{(n)}(z)= \frac{(-1)^{n-1} (n-1)!}{(1+z)^n} = (-1)^{n-1} (n-1)! (1+z)^{-n}$$
+Dette indsætter vi i formlen for Taylorrækken fra Theorem 4.8 (Cauchys Integral Formel for den n'te afledte), hvor vi har $a=0$, så
+\begin{align*}
+f(z) &= \sum_{n=0}^\infty \frac{(-1)^{n-1} (n-1)! (1+(0))^{-n}}{n!} z^n \\
+&= \sum_{n=0}^\infty \frac{(-1)^{n-1}}{n} z^n  \\
+(\text{da } f(0)=0) \ \ &= \sum_{n=1}^\infty \frac{(-1)^{n-1}}{n} z^n
+\end{align*}
+For $z \in K(0,1)$.
+$$\left( \sum_{n=1}^\infty \frac{(-1)^{n-1}}{n} z^n = \text{Log}(1+z) = z - \frac{z^2}{2} + \frac{z^3}{3} - \frac{z^4}{4} + - ...  \ \ |z|<1 \right)$$
+\end{proof}
+
+
+
+
+
+\newpage
+\begin{Prob}{\textbf{Theorem 6.1}} \\
+
+Lad $f$ være holomorf i et område $G$ og antag at $f \not\equiv 0$. \\
+Hvis $f(a)=0$, så findes der et entydigt bestemt $n \in \mathbb{N}$ og en entydigt bestemte funktion $g \in \mathcal{H}(G)$ med $g(a) \neq 0$ sådan, at
+\begin{equation}
+f(z) = (z-a)^n g(z), \ \ z \in G
+\end{equation}
+(Tallet kaldes multipliciteten eller ordenen af nulpunktet $a$ for $f$ og betegnes $\text{ord}(f,a)$.)
+\end{Prob}
+
+\begin{framed}
+\textbf{Bevisfremgang} \\
+\textbf{1.} \ Vi starter med at bevise faktoriseringen af (7). Så lLad $K(a,\rho)$ være den størst mulige cirkelskive i $G$ og brug Theorem 4.8. \\
+\textbf{2.} \ Antag for modstrid, at at $f^{(k)}(a)=0$ for alle $k \geq 0$, da vil $f(z)=0$ for alle $z \in K(a,\rho)$ (vil vise at så er $f \equiv 0$). \\
+\textbf{3.} \ Lad $z_0 \in G$, vælg en kontinuert kurve $\gamma[0,1] \rightarrow G$, som forbinder $\gamma (0)=a $ med $\gamma(1)=z_0$. Brug Flise-lemmaet, husk at $f^{(k)}(\gamma(t_1)) = 0 \ \ \forall k \geq 0$.\\
+\textbf{4.} \ Brug Theorem 4.8, så er $f \equiv 0 \ \ \text{i} \ K(\gamma(t_1),r).$ Udvid via Fliselemmaet til alle "Fliser".\\
+\textbf{5.} \ Dermed må mindste tal $n \geq 1$ så $f^{(n)}(a) \neq 0$ findes. Så for $k=0,...,n-1$ er $f^{(k)}(a)=0$. Så
+$$f(z) = (z-a)^n \sum\limits_{k=0}^\infty \frac{f^{(k+n)}(a)}{(k+n)!} (z-a)^k$$\\
+\textbf{6.} \ Så er 
+$$g(z) =
+\left\{
+	\begin{array}{ll}
+		\frac{f(z)}{(z-a)^n} & \text{for } z \in G \setminus \{a\}\\ \\
+		\sum\limits_{k=0}^\infty \frac{f^{(k+n)}(a)}{(k+n)!}(z-a)^k & \text{for } z \in K(a,\rho)
+	\end{array}
+\right.$$
+er veldefineret og holomorf i $G$. Derudover er $f(z) = (z-a)^n g(z)$ for $z \in G$ og $g(z) = \frac{f^{(n)}(a)}{n!} \neq 0$.\\
+\textbf{7.} \textbf{Entydighed}: Antag, at $f(z) = (z-a)^{n_1} g_1(z) = (z-a)^{n_2} g_2(z)$ for $z \in G$, hvor $g_1(a) = 0$ og $g_2(a) \neq 0$ og $n_1 \geq n_2$. Isoler $g_2(z)$ og lad $z \rightarrow a$.
+\end{framed}
+
+\newpage
+\begin{proof}[\textbf{Bevis}] 
+Vi starter med at bevise faktoriseringen af (7). \\
+Lad $K(a,\rho)$ være den størst mulige cirkelskive i $G$. \\
+Da giver Theorem 4.8 (Cauchy's Integral Formel for den n'te afledte), at
+$$f(z) = \sum\limits_{k=0}^\infty \frac{f^{(k)]}(a)}{k!}(z-a)^k, \ \ z \in K(a,\rho)$$
+Antag, at $f^{(k)}(a)=0$ for alle $k \geq 0$, da vil $f(z)=0$ for alle $z \in K(a,\rho)$, og vi ser i det følgende, at $f \equiv 0$ i $G$, modstrid med antagelsen: \\
+
+Lad $z_0 \in G$ og vælg en kontinuert kurve $\gamma[0,1] \rightarrow G$, som forbinder $\gamma (0)=a $ med $\gamma(1)=z_0$. \\
+Bruger nu Lemma 5.2 (Flise-lemmaet), og ser, at der findes uendeligt mange punkter
+$$0 = t_0 < t_1 < t_2 < ... < t_n = 1$$
+og et tal $r>0$ sådan, at 
+$$\bigcup_{i=0}^n K(\gamma(t_i),r) \subseteq G$$
+og
+$$\gamma([t_i,t_{i+1}]) \subseteq K(\gamma(t_i),r)$$
+holder. Særligt vil $K(\gamma(0),r)=K(a,r) \subseteq G$, så vil $K(a,r) \subseteq K(a,\rho)$, for $r \leq \rho$. \\
+Derudover vil $\gamma(t_1) \in K(a,r)$ og $f \equiv 0$ i $K(a,\rho)$, så
+$$f^{(k)}(\gamma(t_1)) = 0 \ \ \forall k \geq 0$$
+Så giver Theorem 4.8 (Cauchy's Integral Formel for den n'te afledte) nu, at
+$$f \equiv 0 \ \ \text{i} \ K(\gamma(t_1),r).$$
+Da $f$ er lig sin Taylorrække i $K(\gamma(t_1),r)$, som er lig $f$'s Taylorrække i $K(a,r)$. \\
+På samme måde deducerer vi at $f \equiv 0$ i alle cirkelskiverne $K(\gamma(t_i),r)$ og især at $f(z_0) = 0$. \\
+Så nu er det bevist, at antagelsen om, at $f^{(k)}(a)=0$ for alle $k \geq 0$ er i modstrid med antagelsen om, at $f \not\equiv 0$. \\
+
+Nu ser vi altså, at der findes et mindste tal $n \geq 1$ så $f^{(n)}(a) \neq 0$, dermed gælder det, at $f^{(k)}(a)=0$ for $k=0,1,2,3,...,n-1$. \\
+
+Nu giver ligning; $f(z) = \sum\limits_{k=0}^\infty \frac{f^{(k)]}(a)}{k!}(z-a)^k, \ \ z \in K(a,\rho)$, at
+\begin{equation}
+f(z) = \sum\limits_{k=n}^\infty \frac{f^{(k)}(a)}{k!}(z-a)^k = (z-a)^n \sum\limits_{k=0}^\infty \frac{f^{(k+n)}(a)}{(k+n)!} (z-a)^k
+\end{equation}
+for $z \in K(a,\rho) \subseteq G$. \\
+
+Vi ser, at funktionen
+$$g(z) =
+\left\{
+	\begin{array}{ll}
+		\frac{f(z)}{(z-a)^n} & \text{for } z \in G \setminus \{a\}\\ \\
+		\sum\limits_{k=0}^\infty \frac{f^{(k+n)}(a)}{(k+n)!}(z-a)^k & \text{for } z \in K(a,\rho)
+	\end{array}
+\right.$$
+er veldefineret på grund af (8) og hver "gren" af $g$ er holomorf i $G$. Derudover er
+$$ f(z) = (z-a)^n g(z), \ \ \text{for } z \in G \ \text{ og } \ 
+g(z) = \frac{f^{(n)}(a)}{n!} \neq 0$$
+hvilket er en faktorisering af den ønskede type. \\
+
+For at bevise entydigheden af den ovenstående faktorisering, antager vi, at
+\begin{equation}
+f(z) = (z-a)^{n_1} g_1(z) = (z-a)^{n_2} g_2(z) \ \text{ for } z \in G,
+\end{equation}
+hvor $g_1(a) = 0$ og $g_2(a) \neq 0$. \\
+Antager nu at $n_1 \geq n_2$. Nu giver (9), at
+$$(z-a)^{n_1 - n_2}g_1(z) = g_2(z), \ \ z \in G \setminus \{a\}$$
+Lader nu $z \rightarrow a$, så $g_1(z) \rightarrow g_1(a)$. \\
+Antager nu, at $n_1 > n_2$, så for $z \rightarrow a$
+$$(z-a)^{n_1 - n_2} g_1(z) \rightarrow 0, \ \text{ så } \ \
+g_1(a) =0 = g_2(a) \neq 0 \lightning$$
+
+Dvs. $n_1 = n_2$, så
+$$g_1(z) = g_2(z), \ \text{ for } z \in G \setminus \{a\}$$
+og ved et kontinuitetsargument holder denne lighed også for $z = a$. Da vi ved, at $g(a) \neq 0$ for vi, at $n_1 = n_2$, dermed er $g_1(z) = g_2(z)$ for alle $z \in G$.
+\end{proof}
+
+
+
+
+
+
+
+\newpage
+\begin{Prob}{\textbf{Theorem 6.21}} \\
+
+Lad $a$ være en isoleret singularitet for $\mathcal{H}(G \setminus \{a\})$, som har Laurentrækkefremstillingen
+$$ f(z) = \sum\limits_{n= - \infty}^\infty c_n (z-a)^n$$
+for alle $z \in A(a;0,\rho) = K'(a,\rho)$, med
+$$c_n = \frac{1}{2 \pi i} \int_{\partial K(a,r)} \frac{f(z)}{(z-a)^{n+1}}dz$$
+Da gælder:
+\item[\textbf{A)}] $a$ er en hævelig singularitet for $f$, $\Leftrightarrow$ $c_n=0$ for alle $n<0$.
+\item[\textbf{B)}] $a$ er en pol af orden $m$ for $f$, $\Leftrightarrow$ $c_n=0$ for alle $n < -m \ \ (c_{-m} \neq 0)$.
+\item[\textbf{C)}] $a$ er en essentiel singularitet for $f$, $\Leftrightarrow$ $c_n \neq 0$ for uendeligt mange $n<0$.
+\end{Prob}
+
+\begin{framed}
+\textbf{Bevisfremgang} \\
+\textbf{1.} \ \textbf{A)} $a$ er en hævelig singularitet for $f$, hvis og kun hvis $c_n=0$ for alle $n<0$. Sæt $c_n=0$ for $n<0$ og se, at $f(z)=f_i(z)+f_e(z)= \sum\limits_{n=0}^\infty c_n (z-a)^n + \sum\limits_{n=1}^\infty \frac{c_{-n}}{(z-a)^n}$. Så er $f(a) = c_0 =f_i(a)$ \\
+\textbf{2.} \ Antag at $a$ er en hævelig singularitet, så findes $c := \lim_{z \rightarrow a} f(z)$ og særligt findes $r_0 > 0 \ (r_0 < \rho)$, så 
+$$|f(z) -c| \leq 1, \ \ \text{for } \ z \in K'(a,r_0).$$
+\textbf{3.} \ Baseret på ovenstående, skal vi vise, at $c_n = 0$ når $n<0$. For $0<r<\rho$ kig på $c_n = \frac{1}{2\pi i} \int_{\partial K(a,r)} f(z) (z-a)^{-n-1}dz$. \\
+\textbf{4.} \ Husk $n<0$, så $(z-a)^{-n-1}$ har stamfunktion og brug Theorem 2.11\\
+\textbf{5.} \ Da $c := \lim_{z \rightarrow a} f(z)$ findes, giver Theorem 6.9 (Riemann):
+$$c_n = \frac{1}{2 \pi i} \int_{\partial K(a,r)} (f(z)-c)(z-a)^{-n-1}dz$$ \\
+\textbf{6.} \ Da der for grænseværdien $c$ særligt findes $\rho>r_0>0$, så $|f(z)-c| \leq 1$, for $z \in K'(a,r_0)$, giver Estimationslemmaet (2.8) nu, for $r<r_0$, at
+$$|c_n| = \frac{2\pi r}{2 \pi} \cdot 1 \cdot r^{-n-1} = r^{-n}$$
+Og da vi husker, at $-n>0$, så får vi, at $c_n$ ved at lade $r \rightarrow 0$. \\
+\textbf{7.} \  \textbf{B)} ($a$ er en pol af orden $m$ for $f$, $\Leftrightarrow$ $c_n=0$ for alle $n < -m \ \ (c_{-m} \neq 0)$.)
+Hvis $c_{-m}\neq 0$ for et $m\geq1$ og $c_{-n}=0$ for $n>m$, så kan vi omskrive $f(z)=f_i(z)+f_e(z)= \sum\limits_{n=0}^\infty c_n (z-a)^n + \sum\limits_{n=1}^\infty \frac{c_{-n}}{(z-a)^n}$ til 
+$$f(z) = \frac{c_{-m}}{(z-a)^m} + \frac{c_{-(m-1)}}{(z-a)^{m-1}} + ... + \frac{c_{-1}}{(z-a)} + \sum\limits_{n=0}^\infty c_n (z-a)^n.$$
+Dermed er
+$$(z-a)^m f(z) = \sum\limits_{k=0}^{m-1} c_{-m+k}(z-a)^k + \sum\limits_{n=0}^\infty c_n(z-a)^n.$$
+Dette viser, at 
+$$\lim_{z \rightarrow a} (z-a)^m f(z) = c_{-m} \neq 0,$$
+så er $a$ en pol af orden $m$.  \\
+\textbf{8.} \ Hvis vi modsat antager, at $z=a$ er en pol af orden $m \geq 1$, så har funktionen $(z-a)^m f(z)$ en hævelig singularitet. \\
+\textbf{9.} \ Laurentrækken af $(z-a)^m f(z)$ opnås ved at multiplicitere $f(z) = \sum\limits_{n=-\infty}^\infty c_n(z-a)^n$ med $(z-a)^m$. \\
+\textbf{10.}\ Af \textbf{A)} kan det nu udledes, at $c_{k-m} = 0$ for $k<0$, da $c_n = 0$ for $n<-m$. \\
+\textbf{11.}\ At $c_n \neq 0$ for uendeligt mange $n<0$, uforenelig med, \\
+at $c_n=0$ for alle $n < -m \ \ (c_{-m} \neq 0)$ fra \textbf{B)}, og, at $c_n=0$ for alle $n<0$ fra \textbf{A)}. Hvis en singularitet hverken er hævelig eller en pol er den pr. def. essentiel. \\
+\end{framed}
+
+\newpage
+\begin{proof}[\textbf{Bevis}]
+Vi starter med\\
+\textbf{A)} ($a$ er en hævelig singularitet for $f$, $\Leftrightarrow$ $c_n=0$ for alle $n<0$.)\\
+
+Hvis $c_n=0$ for $n<0$, så er $f_e(z)=\sum\limits_{n=1}^\infty \frac{c_{-n}}{(z-a)^n}=0$ og $f_i(z)=\sum\limits_{n=0}^\infty c_n (z-a)^n$ bestemmer den holomorfe udviddelse af $f$ til $a$ med værdien
+$$f(a) = c_0 = f_i(a)$$ 
+
+Nu antager vi, at $a$ er en hævelig singularitet, for så findes grænseværdien
+$$c := \lim_{z \rightarrow a} f(z)$$
+og særligt findes $r_0 > 0 \ (r_0 < \rho)$, så
+$$|f(z) -c| \leq 1, \ \ \text{for } \ z \in K'(a,r_0)$$
+Baseret på ovenstående, skal vi vise, at $c_n = 0$ når $n<0$. \\
+For $0<r<\rho$, så gælder
+$$c_n = \frac{1}{2\pi i} \int_{\partial K(a,r)} f(z) (z-a)^{-n-1}dz$$
+men da $n<0$ så er $-n-1 \geq 0$, og så har $(z-a)^{-n-1}$ stamfunktionen $\frac{(z-a)^{-n}}{(-n)}$ og så giver Theorem 2.11, at
+$$\int_{\partial K(a,r)} (z-a)^{-n-1} dz= 0$$
+og da grænseværdien $c := \lim_{z \rightarrow a} f(z)$ findes, giver Theorem 6.9 (Riemann) nu, at
+$$c_n = \frac{1}{2 \pi i} \int_{\partial K(a,r)} (f(z)-c)(z-a)^{-n-1}dz$$
+Da der for grænseværdien $c$ særligt findes $\rho>r_0>0$, så $|f(z)-c| \leq 1$, for $z \in K'(a,r_0)$, giver Estimationslemmaet (2.8) nu, for $r<r_0$, at
+$$|c_n| = \frac{2\pi r}{2 \pi} \cdot 1 \cdot r^{-n-1} = r^{-n}$$
+Og da vi husker, at $-n>0$, så får vi, at $c_n$ ved at lade $r \rightarrow 0$. \\
+\\
+\textbf{B)} ($a$ er en pol af orden $m$ for $f$, $\Leftrightarrow$ $c_n=0$ for alle $n < -m \ \ (c_{-m} \neq 0)$.)\\
+
+Hvis $c_{-m}\neq 0$ for et $m\geq1$ og $c_{-n}=0$ for $n>m$, så kan vi omskrive $f(x)=f_i(z)+f_e(z)= \sum\limits_{n=0}^\infty c_n (z-a)^n + \sum\limits_{n=1}^\infty \frac{c_{-n}}{(z-a)^n}$ til 
+$$f(z) = \frac{c_{-m}}{(z-a)^m} + \frac{c_{-(m-1)}}{(z-a)^{m-1}} + ... + \frac{c_{-1}}{(z-a)} + \sum\limits_{n=0}^\infty c_n (z-a)^n.$$
+Dermed er
+$$(z-a)^m f(z) = \sum\limits_{k=0}^{m-1} c_{-m+k}(z-a)^k + \sum\limits_{n=0}^\infty c_n(z-a)^n.$$
+Dette viser, at 
+$$\lim_{z \rightarrow a} (z-a)^m f(z) = c_{-m} \neq 0,$$
+så er $a$ en pol af orden $m$.  \\
+
+Hvis vi modsat antager, at $z=a$ er en pol af orden $m \geq 1$, så har funktionen $(z-a)^m f(z)$ en hævelig singularitet. \\
+Laurentrækken af $(z-a)^m f(z)$ opnås ved at multiplicitere $f(z) = \sum\limits_{n=-\infty}^\infty c_n(z-a)^n$ med $(z-a)^m$, dermed er
+$$(z-a)^m f(z) = \sum\limits_{n=-\infty}^\infty c_n (z-a)~{n+m} = \sum\limits_{k=-\infty}^\infty c_{k-m}(z-a)^k.$$
+Af \textbf{A)} kan det nu udledes, at $c_{k-m} = 0$ for $k<0$, da $c_n = 0$ for $n<-m$. \\
+\\
+\textbf{C)} ($a$ er en essentiel singularitet for $f$, $\Leftrightarrow$ $c_n \neq 0$ for uendeligt mange $n<0$.) \\
+
+Denne påstand er en konsekvens af \textbf{A)} og \textbf{B)}, fordi en essentiel singularitet er en isoleret singularitet, som hverken er hævelig eller en pol. \\
+Ligeledes er betingelsen om, at $c_n \neq 0$ for uendeligt mange $n<0$, uforenelig med, \\
+at $c_n=0$ for alle $n < -m \ \ (c_{-m} \neq 0)$ fra \textbf{B)}, og, at $c_n=0$ for alle $n<0$ fra \textbf{A)}.
+\end{proof}
+
+
+
+
+
+
+
+
+
+\newpage
+\begin{Prob}{\textbf{Theorem 7.3}} \\
+
+Lad $h: G \rightarrow \mathbb{C} \cup \{\infty\}$ være meromorf i et enkeltsammenhængende områge $G$, og lad $\gamma$ være en lukket sti med positiv omløbsretning i $G$, som ikke gennemløber nogen nulpunkter eller poler for $h$. Så gælder
+$$\frac{1}{2\pi i} \int_\gamma \frac{h'(z)}{h(z)} dz = Z-P$$,
+hvor $Z$ er antallet af nulpunkter og $P$ er antallet af poler for $h$ i området omkranset af $gamma$.
+\end{Prob}
+
+\begin{framed}
+\textbf{Bevisfremgang} \\
+\textbf{1.} \ Lad $D$ være mængden af nulpunkter eller poler for $h$. Så er $\frac{h'}{h}$ holomorf i $G \setminus D$. \\
+\textbf{2.} \ Vi vil se at $\frac{h'}{h}$ er meromorf, hvis $D$ er mængden af poler. Lad $a$ betegne et nulpunkt af $h$ af orden $n$ og brug Theorem 6.1, for  $z \in K(a,r)$, hvor $r$ er tilstrækkelig stor, at
+$$h(z) = (z-a)^n g(z), \ \ g \in \mathcal{H}(K(a,r)), \ g(a)\neq 0.$$
+Husk $h'$.\\
+\textbf{3.} \ Vi lader nu $b$ betegne en pol af $h$ af orden $m$, har vi, at for $z \in K'(b,r)$, hvor $r$ er tilstækkelig lille, så er
+$$h(z) = (z-b)^{-m}g(z), \ \ g \in \mathcal{H}(K(b,r)), \ g(b) \neq 0,$$
+dermed er
+$$h'(z) = -m(z-b)^{-(m+1)}g(z) + (z-b)^{-m} g'(z).$$
+\textbf{4.} \ Lad så $\{a_1,...,a_n\}$ være de punkter fra $D$, som bliver omkranset af $\gamma$. Intuitivt findes et enkeltsammenhængende delområde $G_1 \subseteq G$ sådan, at $D \cap G = \{a_1,...,a_n\}$. \\
+\textbf{5.} \ Nu anvender vi Theorem 7.1 (Cauchys Residue Sætning) på $\frac{h'}{h} \in \mathcal{H}(G_1 \setminus \{a_1,...,a_n\}$ 
+\end{framed}
+
+\newpage
+\begin{proof}[\textbf{Bevis}]
+Lad $D$ være mængden af nulpunkter eller poler for $h$. Så er $\frac{h'}{h}$ holomorf i $G \setminus D$. \\
+Vi vil se at $\frac{h'}{h}$ er meromorf, hvis $D$ er mængden af poler. Vi lader $a$ betegne et nulpunkt af $h$ af orden $n$, så giver Theorem 6.1, for $z \in K(a,r)$, hvor $r$ er tilstrækkelig stor, at
+$$h(z) = (z-a)^n g(z), \ \ g \in \mathcal{H}(K(a,r)), \ g(a)\neq 0,$$
+dermed er
+$$h'(z) = n(z-a)^{n-1}g(z) + (z-a)^ng'(z),$$
+hvilket medfører, at
+$$\frac{h'(z)}{h(z)} = \frac{n}{z-a} + \frac{g'(z)}{g(z)},$$
+hvilket viser, at $\frac{h'}{h}$ har en simpel pol i $a$ med Residuet $n$. \\
+
+Vi lader nu $b$ betegne en pol af $h$ af orden $m$, har vi, at for $z \in K'(b,r)$, hvor $r$ er tilstækkelig lille, så er
+$$h(z) = (z-b)^{-m}g(z), \ \ g \in \mathcal{H}(K(b,r)), \ g(b) \neq 0,$$
+dermed er
+$$h'(z) = -m(z-b)^{-(m+1)}g(z) + (z-b)^{-m} g'(z),$$
+hvilket medfører, at
+$$\frac{h'(z)}{h(z)} = \frac{-m}{z-b} + \frac{g'(z)}{g(z)},$$
+hvilket viser, at $\frac{h'}{h}$ har en simpel pol i $b$ med Residuet $-m$. \\
+
+Lad så $\{a_1,...,a_n\}$ være de punkter fra $D$, som bliver omkranset af $\gamma$. \\
+Nu bruger vi det intuitive faktum (som her forbliver ubevist), at der findes et enkeltsammenhængende delområde $G_1 \subseteq G$ sådan, at $D \cap G = \{a_1,...,a_n\}$. \\
+Nu anvender vi Theorem 7.1 (Cauchys Residue Sætning) på $\frac{h'}{h} \in \mathcal{H}(G_1 \setminus \{a_1,...,a_n\}$ og så får vi
+$$\frac{1}{2\pi i} \int_\gamma \frac{h'(z)}{h(z)}dz = \sum\limits_{j=1}^n \text{Res}(\frac{h'}{h},a_j) = Z-P,$$
+Da Res$(\frac{h'}{h},a_j) = \pm m$, med $+$, hvis $a_j$ er et nulpunkt, og m,ed $-$, hvis $a_j$ er en pol af orden $m$.
+\end{proof}
+
+
+
+
+
+
+\newpage
+\begin{Prob}{\textbf{Theorem 8.3, Schwart's lemma}} \\
+
+Lad $f:K(0,1) \rightarrow K(0,1)$ være holomorf med $f(0)=0$. Så er \\
+\item[\textbf{(i)}] $|f(z)| \leq |z|$ for $|z|<1$.
+\item[\textbf{(ii)}] $|f(0)| \leq 1$. \\
+
+Hvis der enten i \textbf{(i)} eller i \textbf{(ii)} gælder lighed, så er $f(z) = \lambda(z)$ for et $\lambda \in \mathbb{C}$, hvor $|\lambda| =1$. \\
+(Med andre ord, så er $f$ en rotation omkring nul, med vinklen $\arg(\lambda)$.)
+\end{Prob}
+
+\begin{framed}
+\textbf{Bevisfremgang} \\
+\textbf{1.} \ Funktionen $\frac{f(z)}{z}$ er holomorf i $K'(0,1)$ med en hævelig singularitet i $z=0$ ($\lim_{z \rightarrow 0} \frac{f(z)}{z} = f'(0)$) findes. \\
+\textbf{2.} \ Derfor er funktionen
+$$g(z) =
+\left\{
+	\begin{array}{ll}
+		\frac{f(z)}{z} & \text{for } 0 < |z| < 1\\
+		f'(0) & \text{for } z=0
+	\end{array}
+\right.$$
+holomorf i $K(0,1)$. \\
+\textbf{3.} \ Nu giver anvendelsen af Theorem 8.2 (Maximum modulus princippet - Global version) på $g$ for $z \in K(0,1)$ og $|z| \leq r < 1$ \\
+\textbf{4.} \ Nu bruger vi at $r \in [|z|,1)$ er tilfældig, og så får vi, at $|g(z)| \leq 1$ for $|z|<1$ ved at lade $r \rightarrow 1$. I særdeleshed får vi, at 
+$$|f(z)| \leq |z| \ \text{ og } \ |f'(0)| \leq 1.$$  \\
+\textbf{5.} \  Hvis ligheden holder i en af de ovenstående uligheder, så har $|g|$ et lokalt maksimum i $K(0,1)$, og dermed er $g \equiv \lambda$ for en konstant $\lambda$, hvorom det gælder, at $|\lambda| = 1$.
+\end{framed}
+
+\newpage
+\begin{proof}[\textbf{Bevis}]
+Funktionen $\frac{f(z)}{z}$ er holomorf i $K'(0,1)$ med en hævelig singularitet i $z=0$, fordi
+$$\lim_{z \rightarrow 0} \frac{f(z)}{z} = f'(0)$$
+findes. \\
+Derfor er funktionen
+$$g(z) =
+\left\{
+	\begin{array}{ll}
+		\frac{f(z)}{z} & \text{for } 0 < |z| < 1\\ \\
+		f'(0) & \text{for } z=0
+	\end{array}
+\right.$$
+holomorf i $K(0,1)$. \\
+Nu giver anvendelsen af Theorem 8.2 (Maximum modulus princippet - Global version) på $g$ for $z \in K(0,1)$ og $|z| \leq r < 1$, at
+$$|g(z)| \leq \max \left\{ \left| \frac{f(z)}{z} \right| \ \middle| \ |z| =r \right\} < \frac{1}{r}$$
+da $|f(z)| <1$ for alle $z\in K(0,1)$. Den sidste ulighed er blød, når vi kigger i grænsen $r \rightarrow 1$.\\
+Nu bruger vi at $r \in [|z|,1)$ er tilfældig, og så får vi, at $|g(z)| \leq 1$ for $|z|<1$ ved at lade $r \rightarrow 1$. \\
+I særdeleshed får vi, at 
+$$|f(z)| \leq |z| \ \text{ og } \ |f'(0)| \leq 1.$$
+Hvis ligheden holder i en af de ovenstående uligheder, så har $|g|$ et lokalt maksimum i $K(0,1)$, og dermed er $g \equiv \lambda$ for en konstant $\lambda$, hvorom det gælder, at $|\lambda| = 1$.
+\end{proof}
+
+\end{document}
